@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/.idea/searchal-media.iml" filepath="$PROJECT_DIR$/.idea/searchal-media.iml" />
+=======
+      <module fileurl="file://$PROJECT_DIR$/.idea/tweet-search.iml" filepath="$PROJECT_DIR$/.idea/tweet-search.iml" />
+>>>>>>> 205b2f5c228d571ae944caaaf54e07daca04dac4
     </modules>
   </component>
 </project>
