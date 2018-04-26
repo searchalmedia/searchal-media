@@ -1,4 +1,3 @@
 export default{
     SUBMIT_SEARCH:'SUBMIT_SEARCH',
-    FETCH_RESULTS: 'FETCH_RESULTS'
 }

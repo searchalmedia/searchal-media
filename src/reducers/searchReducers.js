@@ -1,16 +1,20 @@
 import constants from '../constants/actionTypes';
 
-export default function(state = null, action){
-
-switch(action.type) {
-    case 'SUBMIT_SEARCH':
-        state = action;
-        break;
-
-    case 'FETCH_RESULTS':
-        state = action;
-        break;
-    }
-
-    return state;
+var initialState = {
+    searchKey: localStorage.getItem('searchKey') ? localStorage.getItem('searchKey') : ''
 }
+
+export default (state = initialState, action) => {
+
+    var updated = Object.assign({}, state);
+
+    switch (action.type) {
+        case constants.SUBMIT_SEARCH:
+            updated['searchKey'] = action.searchKey;
+            return updated;
+
+        default:
+            return state;
+    }
+}
+

@@ -18,31 +18,17 @@ export function submitSearch(data){
                 'Content-Type': 'application/json'
             },
             body:JSON.stringify(data),
-            mode: 'cors'
-        })
-            .then((res)=>{
-                dispatch(searchTwitter(data.searchKey));
+            mode: 'cors'})
+            .then( (response) => {
+                if (!response.ok) {
+                    throw Error(response.statusText);
+                }
+                return response.json();
+            })
+            .then( (res)=>{
+                localStorage.setItem('searchKey', data);
+                dispatch(searchTwitter(data));
             })
             .catch((e)=> console.log(e));
     }
 }
-
-/*module.exports = {submitSearch: function(data){
-        const env = runtimeEnv();
-        return dispatch =>{
-            return fetch(`https://final-api-project.herokuapp.com/search`,{
-                method:'POST',
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                },
-                body:JSON.stringify(data),
-                mode: 'cors'
-            })
-                .then((res)=>{
-                    dispatch(searchTwitter(data.searchKey));
-                })
-                .catch((e)=> console.log(e));
-        }
-
-    }} */

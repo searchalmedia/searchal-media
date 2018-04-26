@@ -1,33 +1,27 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
-import{submitSearch} from './actions/searchActions'
-import SearchBar from 'material-ui-search-bar';
+import SearchHeader from './components/searchheader';
+import Search from './components/search';
+import {HashRouter,Route} from 'react-router-dom';
+import { Provider } from 'react-redux'
+import store from './stores/store'
 
+//add routing configuration
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Searchal Media</h1>
-        </header>
-        <p className="App-intro">
-        </p>
-          <SearchBar
-              onChange={() => console.log('onChange')}
-              onRequestSearch={() => this.props.submitSearch(this.state.value)}
-              style={{
-                  margin: '0 auto',
-                  maxWidth: 800
-              }}
-          />
-
-      </div>
-    );
-  }
-
+    render() {
+        return (
+            <div className="App">
+                <Provider store={store}>
+                    <HashRouter>
+                        <div>
+                            <SearchHeader />
+                            <Route exact path="/search" render={()=><Search />}/>
+                        </div>
+                    </HashRouter>
+                </Provider>
+            </div>
+        );
+    }
 }
-
 
 export default App;
