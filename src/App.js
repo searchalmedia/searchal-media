@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-
+import{submitSearch} from './actions/searchActions'
 import SearchBar from 'material-ui-search-bar';
 
 class App extends Component {
@@ -16,13 +16,12 @@ class App extends Component {
         </p>
           <SearchBar
               onChange={() => console.log('onChange')}
-              onRequestSearch={() => console.log('onRequestSearch')}
+              onRequestSearch={() => this.props.submitSearch(this.state.value)}
               style={{
                   margin: '0 auto',
                   maxWidth: 800
               }}
           />
-
 
       </div>
     );
