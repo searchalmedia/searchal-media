@@ -11,7 +11,7 @@ class Search extends Component {
         this.search = this.search.bind(this);
 
         this.state = {
-                value: '',
+                searchKey: '',
         };
     }
 
@@ -20,13 +20,13 @@ class Search extends Component {
 
         let updateSearch = event.target.value;
         this.setState({
-            value: updateSearch
+            searchKey: updateSearch
         });
     }
 
     search() {
         const {dispatch} = this.props;
-        dispatch(submitSearch(this.state.value));
+        dispatch(submitSearch(this.state.searchKey));
     }
 
     render(){
@@ -34,7 +34,7 @@ class Search extends Component {
             <Form horizontal>
                 <FormGroup controlId="search">
                     <Col sm={10}>
-                        <FormControl onChange={this.updateSearch} value={this.state.value} type="searchKey" placeholder="Search" />
+                        <FormControl onChange={this.updateSearch} value={this.state.searchKey} type="searchKey" placeholder="Search" />
                     </Col>
                 </FormGroup>
                 <FormGroup>

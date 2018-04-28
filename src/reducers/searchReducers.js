@@ -1,7 +1,7 @@
 import constants from '../constants/actionTypes';
 
 var initialState = {
-    searchKey: localStorage.getItem('searchKey') ? localStorage.getItem('searchKey') : ''
+    value: localStorage.getItem('searchKey') ? localStorage.getItem('searchKey') : ''
 }
 
 export default (state = initialState, action) => {

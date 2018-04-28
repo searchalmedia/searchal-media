@@ -1,23 +1,23 @@
 import actionTypes from '../constants/actionTypes';
 import runtimeEnv from '@mars/heroku-js-runtime-env';
 
-function searchTwitter(searchKey){
+
+function searchTwitter(value){
     return{
         type: actionTypes.SUBMIT_SEARCH,
-        searchKey: searchKey
+        value: value
     }
 }
 
-export function submitSearch(data){
+export function submitSearch(key){
     const env = runtimeEnv();
-    return dispatch =>{
-        return fetch(`${env.REACT_APP_API_URL}/search`,{
-            method:'POST',
+    return dispatch => {
+        return fetch(`${env.REACT_APP_API_URL}/search?q=`+ key, {
+            method:'GET',
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
-            body:JSON.stringify(data),
             mode: 'cors'})
             .then( (response) => {
                 if (!response.ok) {
@@ -26,8 +26,8 @@ export function submitSearch(data){
                 return response.json();
             })
             .then( (res)=>{
-                localStorage.setItem('searchKey', data);
-                dispatch(searchTwitter(data));
+                localStorage.setItem('searchKey', key);
+                dispatch(searchTwitter(key));
             })
             .catch((e)=> console.log(e));
     }
