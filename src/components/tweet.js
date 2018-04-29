@@ -16,4 +16,4 @@ module.exports = Tweet = React.createClass ({
             </li>
         )
     }
-});
+})
