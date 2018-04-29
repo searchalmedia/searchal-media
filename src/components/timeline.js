@@ -35,6 +35,15 @@ module.exports = Timeline = React.createclass({
 
    },
 
+    render(){
+        return (
+            <div className="tweets-app">
+                <Tweets tweets={this.state.tweets} />
+            </div>
+        )
+
+    }
+
 
 
 });

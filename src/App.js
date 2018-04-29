@@ -6,6 +6,7 @@ import {HashRouter,Route} from 'react-router-dom';
 import { Provider } from 'react-redux'
 import store from './stores/store'
 
+
 //add routing configuration
 class App extends Component {
     render() {
@@ -15,7 +16,7 @@ class App extends Component {
                     <HashRouter>
                         <div>
                             <SearchHeader />
-                            <Route exact path="/" render={()=><Search />}/>
+                            <Search/>
                         </div>
                     </HashRouter>
                 </Provider>

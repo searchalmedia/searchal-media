@@ -30,19 +30,19 @@ class Search extends Component {
     }
 
     render(){
-        return (
-            <Form horizontal>
-                <FormGroup controlId="search">
-                    <Col sm={10}>
-                        <FormControl onChange={this.updateSearch} value={this.state.searchKey} type="searchKey" placeholder="Search" />
-                    </Col>
-                </FormGroup>
-                <FormGroup>
-                    <Col smOffset={2} sm={10}>
-                        <Button onClick={this.search}>Search</Button>
-                    </Col>
-                </FormGroup>
-            </Form>
+       return (
+            <nav class="navbar">
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+                <form class="form-inline">
+                    <input class="searchBar" placeholder="Search.." onChange={this.updateSearch} value={this.state.searchKey} type="searchKey">
+                    </input>
+                    <button type="submit"onClick={this.search}>
+                        <i class="fa fa-search">
+
+                        </i>
+                    </button>
+                </form>
+            </nav>
         )
     }
 }

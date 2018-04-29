@@ -3,26 +3,65 @@
 }
 
 .App-logo {
-  //animation: App-logo-spin infinite 20s linear;
+//animation: App-logo-spin infinite 20s linear;
   height: 100px;
 }
 
 .App-header {
-  background-color: #222;
-  height: 150px;
+  background-color: #FAFAFA;
+  height: 200px;
   padding: 20px;
-  color: white;
+  color:#66757f;
+
 }
 
 .App-title {
   font-size: 1.5em;
 }
 
-.App-intro {
-  font-size: large;
+.navbar{
+  height: 500px;
+  background-color: #1DA1F2;
+  padding: 20px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+form{
+  width:500px;
+  margin:40px auto;
+  border:none;
+}
+
+.searchBar{
+  padding: 10px;
+  font-size: 17px;
+  border: #1da1f2;
+  float: end;
+  width: 80%;
+  background: white;
+}
+
+form.form-inline button{
+  float: end;
+  width: 10%;
+  padding: 10px;
+  background: white;
+  color: #66757F;
+  font-size: 17px;
+  border: 1px #222;
+  border-left: none;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: #0b7dda;
 }
 
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
