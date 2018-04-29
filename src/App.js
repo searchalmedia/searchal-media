@@ -15,7 +15,7 @@ class App extends Component {
                     <HashRouter>
                         <div>
                             <SearchHeader />
-                            <Route exact path="/search" render={()=><Search />}/>
+                            <Route exact path="/" render={()=><Search />}/>
                         </div>
                     </HashRouter>
                 </Provider>

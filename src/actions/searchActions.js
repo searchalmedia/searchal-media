@@ -12,7 +12,7 @@ function searchTwitter(value){
 export function submitSearch(key){
     const env = runtimeEnv();
     return dispatch => {
-        return fetch(`${env.REACT_APP_API_URL}/search?q=`+ key, {
+        return fetch(`${env.REACT_APP_API_URL}/?q=`+ key, {
             method:'GET',
             headers: {
                 'Accept': 'application/json',
