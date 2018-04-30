@@ -4,20 +4,17 @@
 
 .App-logo {
 //animation: App-logo-spin infinite 20s linear;
-  height: 100px;
+  height: 90px;
 }
 
 .App-header {
-  background-color: #FAFAFA;
-  height: 200px;
-  padding: 20px;
+  background-color: white;
+  height: 175px;
+  padding: 55px;
   color:#66757f;
 
 }
 
-.App-title {
-  font-size: 1.5em;
-}
 
 .navbar{
   height: 500px;
@@ -51,7 +48,7 @@ form.form-inline button{
   width: 10%;
   padding: 10px;
   background: white;
-  color: #1da1f2;
+  color: #FFA500;
   font-size: 17px;
   border: 1px #222;
   border-left: none;
