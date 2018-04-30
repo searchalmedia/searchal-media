@@ -35,6 +35,36 @@ module.exports = Timeline = React.createclass({
 
    },
 
+    showNewTweets: function () {
 
+       var updated =this.state.tweets;
+
+       updated.forEach(function(tweet){
+           tweet.active = true;
+       });
+
+       this.setState({tweets: updated, count: 0});
+
+    },
+
+    loadPagedTweets: function(tweets){
+
+       var self = this;
+
+       if(tweets.length > 0) {
+
+           var updated = this.state.tweets;
+
+           tweets.forEach(function(tweet) {
+               updated.push(tweet);
+           });
+
+       }
+       else{
+           this.setState({done: true, paging: false});
+       }
+    },
+
+    getInitialState: functi
 
 });

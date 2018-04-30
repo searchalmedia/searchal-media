@@ -31,16 +31,17 @@ class Search extends Component {
 
     render(){
         return (
-            <Form horizontal>
-                <FormGroup controlId="search">
-                    <Col sm={10}>
-                        <FormControl onChange={this.updateSearch} value={this.state.searchKey} type="searchKey" placeholder="Search" />
-                    </Col>
+            <Form inline>
+                <FormGroup controlId="search" bsSize="large">
+                        <FormControl
+                            onChange={this.updateSearch}
+                            value={this.state.searchKey}
+                            type="searchKey"
+                            placeholder="Search"
+                        />
                 </FormGroup>
                 <FormGroup>
-                    <Col smOffset={2} sm={10}>
                         <Button onClick={this.search}>Search</Button>
-                    </Col>
                 </FormGroup>
             </Form>
         )
