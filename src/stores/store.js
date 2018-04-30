@@ -1,6 +1,7 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
-import searchReducer from '../reducers/searchReducers';
+import searchReducer from '../reducers/searchReducer';
+import tweetReducer from '../reducers/tweetReducer';
 const middlewares = [thunk];
 
 if (process.env.NODE_ENV === `development`) {
@@ -11,7 +12,8 @@ if (process.env.NODE_ENV === `development`) {
 
 const store = createStore(
     combineReducers({
-        search: searchReducer
+        search: searchReducer,
+        tweet: tweetReducer
     }),
     applyMiddleware(
         ...middlewares

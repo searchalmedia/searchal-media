@@ -16,8 +16,6 @@ class Search extends Component {
     }
 
     updateSearch(event){
-       // let updateSearch = Object.assign({}, this.state.value);
-
         let updateSearch = event.target.value;
         this.setState({
             searchKey: updateSearch
@@ -30,20 +28,19 @@ class Search extends Component {
     }
 
     render(){
-        return (
-            <Form inline>
-                <FormGroup controlId="search" bsSize="large">
-                        <FormControl
-                            onChange={this.updateSearch}
-                            value={this.state.searchKey}
-                            type="searchKey"
-                            placeholder="Search"
-                        />
-                </FormGroup>
-                <FormGroup>
-                        <Button onClick={this.search}>Search</Button>
-                </FormGroup>
-            </Form>
+       return (
+            <nav class="navbar">
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+                <form class="form-inline">
+                    <input class="searchBar" placeholder="Search.." onChange={this.updateSearch} value={this.state.searchKey} type="searchKey">
+                    </input>
+                    <button type="submit"onClick={this.search}>
+                        <i class="fa fa-search">
+
+                        </i>
+                    </button>
+                </form>
+            </nav>
         )
     }
 }

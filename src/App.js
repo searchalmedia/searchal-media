@@ -5,6 +5,7 @@ import Search from './components/search';
 import {HashRouter,Route} from 'react-router-dom';
 import { Provider } from 'react-redux'
 import store from './stores/store'
+import Tweets from './components/tweets';
 
 //add routing configuration
 class App extends Component {
@@ -14,8 +15,9 @@ class App extends Component {
                 <Provider store={store}>
                     <HashRouter>
                         <div>
-                            <SearchHeader />
-                            <Route exact path="/" render={()=><Search />}/>
+                            <SearchHeader/>
+                            <Search/>
+                            <Route path="/tweets" render={()=> <Tweets/>}/>
                         </div>
                     </HashRouter>
                 </Provider>

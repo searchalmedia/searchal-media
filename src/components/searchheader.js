@@ -8,10 +8,12 @@ class SearchHeader extends Component {
 
     render() {
         return (
-                <header className="Search-header">
+            <div>
+                <header className="App-header">
                     <img src={logo} className="App-logo" alt="logo" />
                     <h1 className="App-title">Searchal Media</h1>
                 </header>
+            </div>
         );
     }
 }
