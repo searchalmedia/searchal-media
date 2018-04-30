@@ -1,10 +1,8 @@
-var React = require('react');
-var Tweet = require('./tweet');
+import React, { Component } from 'react';
+import Tweet from'./tweet'  ;
 
-module.exports = Tweets = React.createClass({
-
-    render: function() {
-
+class Tweets extends Component{
+    render() {
         var content = this.props.tweets.map(function(tweet){
             return (
                 <Tweet key={tweet.id} tweet={tweet} />
@@ -16,4 +14,5 @@ module.exports = Tweets = React.createClass({
         )
     }
 
-});
+}
+export default Tweets;

@@ -1,8 +1,9 @@
-var React = require('react');
+import React, { Component } from 'react';
+import SearchHeader from "./searchheader";
 
-module.exports = Tweet = React.createClass ({
-    render:function(){
-        var tweet = this.props.tweet;
+class Tweet extends Component{
+    render() {
+        var tweet = this.state.tweet;
         return (
             <li className={"tweet" + (tweet.active ? ' active' : '')}>
                 <img src={tweet.avatar} className="avatar"/>
@@ -16,4 +17,6 @@ module.exports = Tweet = React.createClass ({
             </li>
         )
     }
-})
+}
+
+export default Tweet;
