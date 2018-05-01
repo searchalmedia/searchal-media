@@ -17,7 +17,7 @@
 
 
 .navbar{
-  height: 500px;
+  height: 175px;
   background-color: #1DA1F2;
   padding: 20px;
 }
@@ -65,3 +65,19 @@ form.form-inline button{
   to { transform: rotate(360deg); }
 }
 
+.card{
+  width: 50rem;
+  margin: 0 auto 65px;
+}
+
+.card-img-top{
+  position: center;
+
+  display: inline-block;
+
+  width: 48px;
+  margin: 10px;
+
+  border: 2px solid #ccc;
+  border-radius: 48px;
+}

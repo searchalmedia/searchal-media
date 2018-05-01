@@ -20,16 +20,19 @@ class Tweets extends Component{
                 return (
                     <ul>
                         {tweets.map((tweet) =>
-                            <li className={"tweet" + (tweet.active ? ' active' : '')}>
-                                <img src={tweet.avatar} className="avatar"/>
+
+                            <div class= "card">
+                                <img class="card-img-top" src={tweet.avatar} alt="Card img cap"/>
                                 <blockquote>
                                     <cite>
-                                        <a href={"http://www.twitter.com/" + tweet.screenname}>{tweet.author}</a>
-                                        <span className="screen-name">@{tweet.screenname}</span>
+                                        <a href={"http://www.twitter.com/" + tweet.author}>{tweet.author}</a>
+                                        <span className="screen-name">@{tweet.author}</span>
                                     </cite>
                                     <span className="content">{tweet.body}</span>
                                 </blockquote>
-                            </li>
+
+                            </div>
+
                         )}
                     </ul>
                 )

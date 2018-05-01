@@ -34,10 +34,8 @@ class Search extends Component {
                 <form class="form-inline">
                     <input class="searchBar" placeholder="Search.." onChange={this.updateSearch} value={this.state.searchKey} type="searchKey">
                     </input>
-                    <button type="submit"onClick={this.search}>
-                        <i class="fa fa-search">
-
-                        </i>
+                    <button type="submit"onClick={this.search} to={'/tweets'}>
+                        <i class="fa fa-search"></i>
                     </button>
                 </form>
             </nav>
