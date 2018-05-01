@@ -17,22 +17,25 @@ class Tweets extends Component{
     render() {
         const Timeline = ({tweets}) => {
             // Build list items of single tweet components using map
-            return (
-                <ul>
-                    {tweets.map((tweet) =>
-                        <li className={"tweet" + (tweet.active ? ' active' : '')}>
-                            <img src={tweet.avatar} className="avatar"/>
-                            <blockquote>
-                                <cite>
-                                    <a href={"http://www.twitter.com/" + tweet.screenname}>{tweet.author}</a>
-                                    <span className="screen-name">@{tweet.screenname}</span>
-                                </cite>
-                                <span className="content">{tweet.body}</span>
-                            </blockquote>
-                        </li>
-                    )}
-                </ul>
-            )
+                return (
+                    <ul>
+                        {tweets.map((tweet) =>
+
+                            <div class= "card">
+                                <img class="card-img-top" src={tweet.avatar} alt="Card img cap"/>
+                                <blockquote>
+                                    <cite>
+                                        <a href={"http://www.twitter.com/" + tweet.author}>{tweet.author}</a>
+                                        <span className="screen-name">@{tweet.author}</span>
+                                    </cite>
+                                    <span className="content">{tweet.body}</span>
+                                </blockquote>
+
+                            </div>
+
+                        )}
+                    </ul>
+                )
         }
 
         // Return ul filled with our mapped tweets
