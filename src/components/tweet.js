@@ -3,6 +3,9 @@ import {connect} from "react-redux";
 import {withRouter} from "react-router-dom";
 import {fetchTweet} from "../actions/tweetActions";
 
+function getTweetData() {
+
+}
 
 class Tweet extends Component{
 

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {connect} from "react-redux";
-import Tweet from './tweet';
 import {fetchTweets} from "../actions/tweetActions";
+import React_Tweet from 'react-tweet';
 
 class Tweets extends Component{
 
@@ -17,22 +17,22 @@ class Tweets extends Component{
     render() {
         const Timeline = ({tweets}) => {
             // Build list items of single tweet components using map
-                return (
-                    <ul>
-                        {tweets.map((tweet) =>
-                            <li className={"tweet" + (tweet.active ? ' active' : '')}>
-                                <img src={tweet.avatar} className="avatar"/>
-                                <blockquote>
-                                    <cite>
-                                        <a href={"http://www.twitter.com/" + tweet.screenname}>{tweet.author}</a>
-                                        <span className="screen-name">@{tweet.screenname}</span>
-                                    </cite>
-                                    <span className="content">{tweet.body}</span>
-                                </blockquote>
-                            </li>
-                        )}
-                    </ul>
-                )
+            return (
+                <ul>
+                    {tweets.map((tweet) =>
+                        <li className={"tweet" + (tweet.active ? ' active' : '')}>
+                            <img src={tweet.avatar} className="avatar"/>
+                            <blockquote>
+                                <cite>
+                                    <a href={"http://www.twitter.com/" + tweet.screenname}>{tweet.author}</a>
+                                    <span className="screen-name">@{tweet.screenname}</span>
+                                </cite>
+                                <span className="content">{tweet.body}</span>
+                            </blockquote>
+                        </li>
+                    )}
+                </ul>
+            )
         }
 
         // Return ul filled with our mapped tweets

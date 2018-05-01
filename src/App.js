@@ -1,25 +1,24 @@
+import {Link, Route, Switch, BrowserRouter} from 'react-router-dom';
 import React, { Component } from 'react';
-import './App.css';
-import SearchHeader from './components/searchheader';
-import Search from './components/search';
-import {HashRouter,Route} from 'react-router-dom';
 import { Provider } from 'react-redux'
 import store from './stores/store'
+import './App.css';
+import Search from './components/search';
 import Tweets from './components/tweets';
 
 //add routing configuration
 class App extends Component {
     render() {
+
         return (
             <div className="App">
                 <Provider store={store}>
-                    <HashRouter>
-                        <div>
-                            <SearchHeader/>
-                            <Search/>
-                            <Route path="/tweets" render={()=> <Tweets/>}/>
-                        </div>
-                    </HashRouter>
+                    <BrowserRouter>
+                        <Switch>
+                            <Route exact path="/" component={Search}/>
+                            <Route path="/tweets" component={Tweets}/>
+                        </Switch>
+                    </BrowserRouter>
                 </Provider>
             </div>
         );
