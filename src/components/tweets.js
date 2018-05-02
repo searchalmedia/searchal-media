@@ -12,9 +12,11 @@ class Tweets extends Component{
         super(props);
         this.mapTweets=this.mapTweets.bind(this);
         this.mapUsers=this.mapUsers.bind(this);
+        this.updateUser = this.updateUser.bind(this);
+        this.user = this.user.bind(this);
 
         this.state = {
-            userKey: '',
+            userName: '',
         };
     }
 
@@ -23,6 +25,17 @@ class Tweets extends Component{
         dispatch(fetchTweets());
     }
 
+    updateUser(event){
+        let updateUser = event.target.value;
+        this.setState({
+            userName: updateUser
+        });
+    }
+
+    user() {
+        const {dispatch} = this.props;
+        dispatch(submitUser(this.state.userName));
+    }
 
     mapTweets(tweets) {
         let tweetData = tweets.map((tweet) => ({
@@ -74,10 +87,17 @@ class Tweets extends Component{
                 <header className="App-header">
                     <img src={logo} className="App-logo" alt="logo" />
                 </header>
-                    <Link to="/botscore">
-                        <button type="submit" onClick={this.mapUsers(this.props.tweets)}> BotScore </button>
-                    </Link>
                 </Link>
+                <form class="form-inline">
+                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+                    <input class="searchBar" placeholder="Enter Username" onChange={this.updateUser} value={this.state.userName} type="userName">
+                    </input>
+                    <Link to="/botscore">
+                        <button type="submit"onClick={this.user}>
+                            <i class="fa fa-search"/>
+                        </button>
+                    </Link>
+                </form>
                 <Timeline tweets={this.mapTweets(this.props.tweets)}/>
             </div>
         );

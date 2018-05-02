@@ -1,68 +1,45 @@
 import React, { Component } from 'react';
 import {connect} from "react-redux";
-import {fetchTweets} from "../actions/tweetActions";
-import {fetchBotScore, submitUser} from "../actions/botActions";
-import React_Tweet from 'react-tweet';
+import { fetchBotScore } from "../actions/botActions";
 import logo from '../logo.svg';
 import { Link } from 'react-router-dom';
-import {submitSearch} from "../actions/searchActions";
 
 
 class BotScore extends Component{
 
     constructor(props) {
         super(props);
-        this.mapUsers=this.mapUsers.bind(this);
     }
 
     componentDidMount() {
         const {dispatch} = this.props;
-        dispatch(fetchTweets());
+        dispatch(fetchBotScore());
     }
 
-    mapUsers(tweets) {
-        let userData = tweets.map((tweet) => ({
-            user : {
-                name: tweet.author,
-                screen_name: tweet.screenName,
-                profile_image_url: tweet.avatar
-            },
-            text: "Gordon Zhong from Web API at UCD sucks"
-        }));
-
-        return userData;
-    }
-
-    render() {
-        const Botline = ({tweets}) => {
-            if (tweets.length === 0)
-            {
-                return (<div>Loading...</div>);
-            }
-            else {
+        render() {
+            const BotInfo = ({currentBotScore}) => {
                 return (
-                    tweets.map((object, i) => <React_Tweet data={object} key={i}/>)
-                )
-            }
-        };
-
-        // Return ul filled with our mapped tweets
-        return (
-            <div align="center">
-                <Link to="/">
-                    <header className="App-header">
-                        <img src={logo} className="App-logo" alt="logo" />
-                    </header>
-                </Link>
-                <Botline tweets={this.mapUsers(this.props.tweets)}/>
-            </div>
-        );
+                    <div align="center">
+                        <Link to="/tweets">
+                            <header className="App-header">
+                                <img src={logo} className="App-logo" alt="logo" />
+                            </header>
+                        </Link>
+                        <div>
+                            {currentBotScore.score}
+                        </div>
+                    </div>
+                );
+            };
+            return (
+                <BotInfo currentBotScore={this.props.botScores}/>
+            );
+        }
     }
-}
 
 const mapStateToProps = state => {
     return {
-        tweets: state.tweet.tweets
+        botScores: state.bot.botScores
     }
 }
 

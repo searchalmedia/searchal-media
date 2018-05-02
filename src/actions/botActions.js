@@ -9,10 +9,10 @@ function getBotScore(value){
     }
 }
 
-function botScoresFetched(botscores){
+function botScoresFetched(botScores){
     return {
         type: actionTypes.FETCH_BOTSCORE,
-        tweets: botscores
+        botScores: botScores
     }
 }
 

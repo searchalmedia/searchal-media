@@ -3,7 +3,6 @@ import { submitSearch } from '../actions/searchActions';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import logo from '../logo.svg';
-import {submitUser} from "../actions/botActions";
 
 class Search extends Component {
 
