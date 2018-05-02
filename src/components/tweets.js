@@ -4,18 +4,25 @@ import {fetchTweets} from "../actions/tweetActions";
 import React_Tweet from 'react-tweet';
 import logo from '../logo.svg';
 import { Link } from 'react-router-dom';
+import {submitUser} from "../actions/botActions";
 
 class Tweets extends Component{
 
     constructor(props) {
         super(props);
         this.mapTweets=this.mapTweets.bind(this);
+        this.mapUsers=this.mapUsers.bind(this);
+
+        this.state = {
+            userKey: '',
+        };
     }
 
     componentDidMount() {
         const {dispatch} = this.props;
         dispatch(fetchTweets());
     }
+
 
     mapTweets(tweets) {
         let tweetData = tweets.map((tweet) => ({
@@ -34,6 +41,16 @@ class Tweets extends Component{
         return tweetData;
     }
 
+    mapUsers(tweets) {
+        const userData = tweets.map((tweet) => ({
+                userName: tweet.screenName
+        }));
+
+        const {dispatch} = this.props;
+        dispatch(submitUser(userData[0]));
+    }
+
+
     render() {
         const Timeline = ({tweets}) => {
             if (tweets.length === 0)
@@ -41,8 +58,11 @@ class Tweets extends Component{
                 return (<div>Loading...</div>);
             }
             else {
+
+                const linkProps = {target: '_blank', rel: 'noreferrer'};
+
                 return (
-                        tweets.map((object, i) => <React_Tweet data={object} key={i}/>)
+                        tweets.map((object, i) => <React_Tweet data={object} key={i} linkProps={linkProps}/>)
                 )
             }
         };
@@ -54,6 +74,9 @@ class Tweets extends Component{
                 <header className="App-header">
                     <img src={logo} className="App-logo" alt="logo" />
                 </header>
+                    <Link to="/botscore">
+                        <button type="submit" onClick={this.mapUsers(this.props.tweets)}> BotScore </button>
+                    </Link>
                 </Link>
                 <Timeline tweets={this.mapTweets(this.props.tweets)}/>
             </div>

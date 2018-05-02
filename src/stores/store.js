@@ -2,6 +2,7 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import searchReducer from '../reducers/searchReducer';
 import tweetReducer from '../reducers/tweetReducer';
+import botReducer from '../reducers/botReducer';
 const middlewares = [thunk];
 
 if (process.env.NODE_ENV === `development`) {
@@ -13,7 +14,8 @@ if (process.env.NODE_ENV === `development`) {
 const store = createStore(
     combineReducers({
         search: searchReducer,
-        tweet: tweetReducer
+        tweet: tweetReducer,
+        bot: botReducer
     }),
     applyMiddleware(
         ...middlewares

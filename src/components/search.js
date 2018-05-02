@@ -3,6 +3,7 @@ import { submitSearch } from '../actions/searchActions';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import logo from '../logo.svg';
+import {submitUser} from "../actions/botActions";
 
 class Search extends Component {
 
@@ -27,7 +28,6 @@ class Search extends Component {
         const {dispatch} = this.props;
         dispatch(submitSearch(this.state.searchKey));
     }
-
 
     render(){
        return (
