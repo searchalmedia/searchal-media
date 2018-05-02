@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import {connect} from "react-redux";
 import {fetchTweets} from "../actions/tweetActions";
 import React_Tweet from 'react-tweet';
+import logo from '../logo.svg';
+import { Link } from 'react-router-dom';
 
 class Tweets extends Component{
 
@@ -34,20 +36,27 @@ class Tweets extends Component{
 
     render() {
         const Timeline = ({tweets}) => {
-            if (tweets.length == 0)
+            if (tweets.length === 0)
             {
-                return (<div>loading...</div>);
+                return (<div>Loading...</div>);
             }
             else {
                 return (
-                    tweets.map((object, i) => <React_Tweet data={object} key={i}/>)
+                        tweets.map((object, i) => <React_Tweet data={object} key={i}/>)
                 )
             }
         };
 
         // Return ul filled with our mapped tweets
         return (
-            <Timeline tweets={this.mapTweets(this.props.tweets)}/>
+            <div align="center">
+                <Link to="/">
+                <header className="App-header">
+                    <img src={logo} className="App-logo" alt="logo" />
+                </header>
+                </Link>
+                <Timeline tweets={this.mapTweets(this.props.tweets)}/>
+            </div>
         );
     }
 }
