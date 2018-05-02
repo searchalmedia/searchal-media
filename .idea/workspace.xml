@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f692e8bb-f152-4fd8-86fb-5c8e8df373b4" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" afterPath="$PROJECT_DIR$/src/App.js" />
-      <change beforePath="$PROJECT_DIR$/src/actions/botActions.js" afterPath="$PROJECT_DIR$/src/actions/botActions.js" />
       <change beforePath="$PROJECT_DIR$/src/components/botscore.js" afterPath="$PROJECT_DIR$/src/components/botscore.js" />
-      <change beforePath="$PROJECT_DIR$/src/components/tweets.js" afterPath="$PROJECT_DIR$/src/components/tweets.js" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/botReducer.js" afterPath="$PROJECT_DIR$/src/reducers/botReducer.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -24,8 +19,8 @@
       <file leaf-file-name="botscore.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/botscore.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1222">
-              <caret line="47" column="12" lean-forward="false" selection-start-line="47" selection-start-column="12" selection-end-line="47" selection-end-column="12" />
+            <state relative-caret-position="313">
+              <caret line="28" column="61" lean-forward="false" selection-start-line="28" selection-start-column="61" selection-end-line="28" selection-end-column="61" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -223,12 +218,12 @@
       <workItem from="1525046897069" duration="7458000" />
       <workItem from="1525119981116" duration="8519000" />
       <workItem from="1525212370435" duration="1634000" />
-      <workItem from="1525224868853" duration="30389000" />
+      <workItem from="1525224868853" duration="30547000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48000000" />
+    <option name="totallyTimeSpent" value="48158000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1280" height="726" extended-state="6" />
@@ -694,8 +689,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/botscore.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1222">
-          <caret line="47" column="12" lean-forward="false" selection-start-line="47" selection-start-column="12" selection-end-line="47" selection-end-column="12" />
+        <state relative-caret-position="313">
+          <caret line="28" column="61" lean-forward="false" selection-start-line="28" selection-start-column="61" selection-end-line="28" selection-end-column="61" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>

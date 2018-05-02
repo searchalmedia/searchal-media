@@ -26,7 +26,7 @@ class BotScore extends Component{
                 screen_name: bot.screenName,
                 profile_image_url: bot.avatar
             },
-            text: bot.screenName +" chance of being a bot is" + bot.score * 100 + "%"
+            text: bot.screenName +" chance of being a bot is " + bot.score * 100 + "%"
         }));
 
         return botData;
@@ -45,7 +45,7 @@ class BotScore extends Component{
                     )
                 }
             };
-            
+
             return (
                 <div align="center">
                     <Link to="/tweets">
