@@ -7,6 +7,7 @@ class Tweets extends Component{
 
     constructor(props) {
         super(props);
+        this.mapTweets=this.mapTweets.bind(this);
     }
 
     componentDidMount() {
@@ -14,33 +15,39 @@ class Tweets extends Component{
         dispatch(fetchTweets());
     }
 
+    mapTweets(tweets) {
+        let tweetData = tweets.map((tweet) => ({
+            id_str: tweet.twid,
+            user: {
+                name: tweet.author,
+                screen_name: tweet.screenName,
+                profile_image_url: tweet.avatar
+            },
+            text: tweet.body,
+            created_at: tweet.date,
+            favorite_count: tweet.favorites,
+            retweet_count: tweet.retweets,
+        }));
+
+        return tweetData;
+    }
+
     render() {
         const Timeline = ({tweets}) => {
-            // Build list items of single tweet components using map
+            if (tweets.length == 0)
+            {
+                return (<div>loading...</div>);
+            }
+            else {
                 return (
-                    <ul>
-                        {tweets.map((tweet) =>
-
-                            <div class= "card">
-                                <img class="card-img-top" src={tweet.avatar} alt="Card img cap"/>
-                                <blockquote>
-                                    <cite>
-                                        <a href={"http://www.twitter.com/" + tweet.author}>{tweet.author}</a>
-                                        <span className="screen-name">@{tweet.author}</span>
-                                    </cite>
-                                    <span className="content">{tweet.body}</span>
-                                </blockquote>
-
-                            </div>
-
-                        )}
-                    </ul>
+                    tweets.map((object, i) => <React_Tweet data={object} key={i}/>)
                 )
-        }
+            }
+        };
 
         // Return ul filled with our mapped tweets
         return (
-            <Timeline tweets={this.props.tweets} />
+            <Timeline tweets={this.mapTweets(this.props.tweets)}/>
         );
     }
 }
