@@ -92,7 +92,7 @@ class Tweets extends Component{
                     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
                     <input class="searchBar" placeholder="Enter Username" onChange={this.updateUser} value={this.state.userName} type="userName">
                     </input>
-                    <Link to="/botscore">
+                    <Link to="/botscores">
                         <button type="submit"onClick={this.user}>
                             <i class="fa fa-search"/>
                         </button>

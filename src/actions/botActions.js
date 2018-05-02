@@ -43,7 +43,7 @@ export function submitUser(user){
 export function fetchBotScore(){
     const env = runtimeEnv();
     return dispatch => {
-        return fetch(`${env.REACT_APP_API_URL}/botscore`,{
+        return fetch(`${env.REACT_APP_API_URL}/botscores`,{
             method: 'GET',
             headers: {
                 'Accept': 'application/json',

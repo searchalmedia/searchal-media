@@ -18,7 +18,7 @@ class App extends Component {
                         <Switch>
                             <Route exact path="/" component={Search}/>
                             <Route path="/tweets" component={Tweets}/>
-                            <Route path="/botscore" component={BotScore}/>
+                            <Route path="/botscores" component={BotScore}/>
                         </Switch>
                     </BrowserRouter>
                 </Provider>
